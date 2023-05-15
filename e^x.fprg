@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DELL"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-03-19 12:17:38 AM"/>
+        <attribute name="created" value="REVMTDtERVNLVE9QLURIVVM1NUI7MjAyMi0wMy0xODsxMToxNTowNSBQTTsyNjI3"/>
+        <attribute name="edited" value="REVMTDtERVNLVE9QLURIVVM1NUI7MjAyMi0wMy0xOTsxMjoxNzozOCBBTTsxOzI3MzA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="i, acc" type="Integer" array="False" size=""/>
+            <declare name="power, ans, temp" type="Real" array="False" size=""/>
+            <output expression="&quot;enter the power of e: &quot;" newline="True"/>
+            <assign variable="acc" expression="40"/>
+            <input variable="power"/>
+            <assign variable="i" expression="1"/>
+            <for variable="i" start="1" end="i &lt;= 40" direction="inc" step="1">
+                <assign variable="temp" expression="(temp * power) / i"/>
+                <assign variable="ans" expression="ans + temp"/>
+            </for>
+            <output expression="&quot;the power of e^&quot;and power and &quot;=&quot;and ans" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
