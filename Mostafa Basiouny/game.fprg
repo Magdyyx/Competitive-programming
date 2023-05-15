@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="DELL"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-03-10 10:32:01 PM"/>
+        <attribute name="created" value="REVMTDtERVNLVE9QLURIVVM1NUI7MjAyMi0wMy0wMzsxMDoxNzoyMyBQTTsyNjIy"/>
+        <attribute name="edited" value="REVMTDtERVNLVE9QLURIVVM1NUI7MjAyMi0wMy0xMDsxMDozMjowMSBQTTs1OzI3MjU="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="coins, p1, p2" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter The Number Of Coins You Want To Play With: &quot;" newline="True"/>
+            <input variable="coins"/>
+            <while expression="coins &lt;= 1">
+                <output expression="&quot;The Number Of Coins Cannot Equal 1 Or Negative Number! &quot;" newline="True"/>
+                <output expression="&quot;Enter The Number Of Coins You Want To Play With: &quot;" newline="True"/>
+                <input variable="coins"/>
+            </while>
+            <assign variable="p2" expression="coins / 2"/>
+            <output expression="&quot;The Current Coins = &quot;&amp;&#13;&#10;coins" newline="True"/>
+            <while expression="coins &gt; 1">
+                <output expression="&quot;Player1 Please Enter The Number Of Coins You Want To Choose: &quot;" newline="False"/>
+                <input variable="p1"/>
+                <while expression="p1 &gt;= coins or p1 &lt;= 0 or p1 &gt; (2 * p2)">
+                    <output expression="&quot;invalid input!&quot;" newline="True"/>
+                    <output expression="&quot;Coins = &quot; &amp; coins" newline="True"/>
+                    <output expression="&quot;Player1 Please Enter The Number Of Coins You Want To Choose: &quot;" newline="True"/>
+                    <input variable="p1"/>
+                </while>
+                <assign variable="coins" expression="coins - p1"/>
+                <output expression="&quot;The Current Coins = &quot; &amp; coins" newline="True"/>
+                <if expression="coins = 1">
+                    <then>
+                        <output expression="&quot;player 2 wins &quot; &amp; &#13;&#10;&quot;congratulations! :)&quot;" newline="True"/>
+                        <output expression="&quot;Thanks For Playing The Game, Good Luck :)&quot;" newline="True"/>
+                        <breakpoint/>
+                    </then>
+                    <else>
+                        <output expression="&quot;Player2 Please Enter The Number Of Coins You Want To Choose: &quot;" newline="True"/>
+                        <input variable="p2"/>
+                        <while expression="p2 &gt; (2 * p1) or p2 &lt;= 0 or p2 &gt;= coins">
+                            <output expression="&quot;invalid input&quot;" newline="True"/>
+                            <output expression="&quot;Coins = &quot; &amp; coins" newline="True"/>
+                            <output expression="&quot;Player2 Please Enter The Number Of Coins You Want To Choose: &quot;" newline="True"/>
+                            <input variable="p2"/>
+                        </while>
+                        <assign variable="coins" expression="coins - p2"/>
+                        <output expression="&quot;Coins = &quot; &amp; coins" newline="True"/>
+                        <if expression="coins = 1">
+                            <then>
+                                <output expression="&quot;player 1 wins &quot; &amp; &quot;congratulations! :)&quot;" newline="True"/>
+                                <output expression="&quot;Thanks For Playing The Game, Good Luck :)&quot;" newline="True"/>
+                                <breakpoint/>
+                            </then>
+                            <else/>
+                        </if>
+                    </else>
+                </if>
+            </while>
+        </body>
+    </function>
+</flowgorithm>
