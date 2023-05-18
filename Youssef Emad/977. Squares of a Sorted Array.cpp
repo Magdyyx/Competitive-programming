@@ -45,13 +45,3 @@ vector<int> sortedSquares(vector<int> &nums)
     }
     return mergedSquare;
 }
-
-int main()
-{
-    vector<int> nums{-4, -1, 0, 3, 10};
-    for (auto &el : sortedSquares(nums))
-    {
-        cout << el << " ";
-    }
-    return 0;
-}
