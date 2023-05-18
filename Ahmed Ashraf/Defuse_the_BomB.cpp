@@ -45,3 +45,14 @@ public:
         return ans;
     }
 };
+
+int main()
+{
+    Solution s;
+    vector<int> code = {10, 5, 7, 7, 3, 2, 10, 3, 6, 9, 1, 6};
+    for (auto &el : s.decrypt(code, -4))
+    {
+        cout << el << ' ';
+    }
+    return 0;
+}
