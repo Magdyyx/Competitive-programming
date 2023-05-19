@@ -181,3 +181,19 @@ public:
     }
 };
 //**********************************************************
+https://leetcode.com/problems/shuffle-the-array/description/
+/*
+    class Solution {
+public:
+    vector<int> shuffle(vector<int>& nums, int n) {
+        int firstX = 0, firstY = n;
+        vector<int> ans;
+        for (int i=firstX, j=firstY; i<n, j<nums.size(); i++,j++){
+            ans.push_back(nums[i]);
+            ans.push_back(nums[j]);
+        }
+        return ans;
+    }
+};
+*/
+//******************************************
