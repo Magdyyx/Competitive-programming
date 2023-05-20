@@ -1,4 +1,4 @@
-https://leetcode.com/problems/squares-of-a-sorted-array/
+// https://leetcode.com/problems/squares-of-a-sorted-array/
 /*
 class Solution {
 public:
@@ -12,7 +12,7 @@ public:
 };
 */
 //***************************************************
-https://leetcode.com/problems/xor-operation-in-an-array/
+// https://leetcode.com/problems/xor-operation-in-an-array/
 /*
 class Solution {
 public:
@@ -30,7 +30,7 @@ public:
 };
 */
 //****************************************************
-https://leetcode.com/problems/defuse-the-bomb/
+// https://leetcode.com/problems/defuse-the-bomb/
 /*
 class Solution {
 public:
@@ -67,7 +67,7 @@ public:
 };
 */
 //************************************************
-https://leetcode.com/problems/move-zeroes/
+// https://leetcode.com/problems/move-zeroes/
 /*
 class Solution {
 public:
@@ -88,7 +88,7 @@ public:
 };
 */
 //****************************************************
-https://leetcode.com/problems/running-sum-of-1d-array/
+// https://leetcode.com/problems/running-sum-of-1d-array/
 /*
 class Solution {
 public:
@@ -108,7 +108,8 @@ public:
 };
 */
 //***************************************************
-https://leetcode.com/problems/intersection-of-two-arrays-ii/description/
+// https://leetcode.com/problems/intersection-of-two-arrays-ii/description/
+/*
 class Solution {
 public:
     vector<int> intersect(vector<int>& nums1, vector<int>& nums2) {
@@ -120,8 +121,10 @@ public:
         return ans;
     }
 };
+*/
 //****************************************************
-https://leetcode.com/problems/contains-duplicate/description/
+// https://leetcode.com/problems/contains-duplicate/description/
+/*
 class Solution {
 public:
     bool containsDuplicate(vector<int>& nums) {
@@ -146,4 +149,103 @@ public:
             return run;
     }
 };
+*/
 //**********************************************************
+// https://leetcode.com/problems/find-numbers-with-even-number-of-digits/
+/*
+class Solution {
+public:
+    int findNumbers(vector<int>& nums) {
+        int count = 0;
+        vector<string> vec;
+        for (int i=0; i<nums.size(); i++){
+            vec.push_back(to_string(nums[i]));
+        }for (int i=0; i<nums.size(); i++){
+            if (vec[i].size() % 2 ==0){
+                count++;
+            }
+        }
+        return count;
+    }
+};
+*/
+//***********************************************************
+// https://leetcode.com/problems/sort-array-by-parity/description/
+/*
+class Solution {
+public:
+    vector<int> sortArrayByParity(vector<int>& nums) {
+        list<int> ans;
+        for (int i=0; i<nums.size(); i++){
+            if (nums[i]%2==0){
+                ans.push_front(nums[i]);
+            }else{
+                ans.push_back(nums[i]);
+            }
+        }
+        vector<int> vec{begin(ans), end(ans)};
+        return vec;
+    }
+};
+*/
+//**********************************************************
+// https://leetcode.com/problems/shuffle-the-array/description/
+/*
+    class Solution {
+public:
+    vector<int> shuffle(vector<int>& nums, int n) {
+        int firstX = 0, firstY = n;
+        vector<int> ans;
+        for (int i=firstX, j=firstY; i<n, j<nums.size(); i++,j++){
+            ans.push_back(nums[i]);
+            ans.push_back(nums[j]);
+        }
+        return ans;
+    }
+};
+*/
+//******************************************************
+// https://leetcode.com/problems/valid-anagram/description/
+/*
+class Solution {
+public:
+    bool isAnagram(string s, string t) {
+        sort(s.begin(), s.end());
+        sort(t.begin(), t.end());
+        return (s==t? true:false);
+    }
+};
+*/
+//******************************************************
+// https://leetcode.com/problems/two-sum/
+/*
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        // vector<int> result;
+        // for(int i =0; i<nums.size(); i++){
+        //     for (int j = i+1; j<nums.size(); j++){
+        //         if (nums[i] + nums[j] == target){
+        //             result.push_back(nums[i]);
+        //             result.push_back(nums[j]);
+        //             return {i,j};
+        //         }
+        //     }
+        // }
+        // return {};
+        int n = nums.size();
+        int i=0,j=i+1;
+         while(i<j) {
+           if(nums[i]+nums[j]==target){
+               return {i,j};
+           } else if(j==n-1) {
+               i++;
+               j = i+1;
+           } else {
+               j++;
+           }
+        }
+        return {};
+    }
+};
+*/
